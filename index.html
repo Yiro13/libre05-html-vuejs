@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Generador de contraseñas</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Generador de Contraseñas</h1>
+        <div class="linea">
+          <label for="password-length">Longitud de la contraseña:</label>
+          <input type="number" id="password-length" v-model="passwordLength" min="1" max="20">
+        </div>
+        <div class="linea">
+          <label for="include-lowercase">Incluir minúsculas:</label>
+          <input type="checkbox" id="include-lowercase" v-model="includeLowercase">
+        </div>
+        <div class="linea">
+          <label for="include-uppercase">Incluir mayúsculas:</label>
+          <input type="checkbox" id="include-uppercase" v-model="includeUppercase">
+        </div>
+        <div class="linea">
+          <label for="include-numbers">Incluir números:</label>
+          <input type="checkbox" id="include-numbers" v-model="includeNumbers">
+        </div>
+        <div class="linea">
+          <label for="include-symbols">Incluir símbolos:</label>
+          <input type="checkbox" id="include-symbols" v-model="includeSymbols">
+        </div>
+        <div class="bot">
+            <button @click="generatePassword" class="btn">Generar Contraseña</button>
+        </div>
+        <div class="resultado">
+          <label for="generated-password">Contraseña Generada:</label>
+          <input type="text" id="generated-password" :value="generatedPassword" readonly>
+        </div>
+    </div> 
+    <footer class="final">
+        <p>Derechos de autor &copy; 2023 Todos los derechos reservados.</p>
+        <nav>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </nav>
+        <p>Advertencia: Generar una contraseña de más de 20 caracteres puede ser causa de <b>Cyber psicosis</b> .</p>
+    </footer>
+      
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="main.js"></script>    
+</body>
+</html>
